@@ -28,7 +28,7 @@ spring:
        host: 127.0.0.1
        port: 6379
        password:
-       #masterName: cluster6379
+       masterName: cluster6379
        maxTotal: 200
        maxIdle: 50
        numTestsPerEvictionRun: 1024

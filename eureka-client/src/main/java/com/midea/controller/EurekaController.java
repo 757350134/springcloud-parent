@@ -48,9 +48,17 @@ public class EurekaController {
         System.out.println(age);
         return "success";
     }
-
     @GetMapping("/setValue3")
     public  String setValue3(){
+        redisUtils.opsForValue("age",18);
+        int age = (int) redisUtils.getForValue("age");
+        Set<Object> name = redisUtils.opsForSet("name");
+        System.out.println(age);
+        return "success";
+    }
+
+    @GetMapping("/setValue4")
+    public  String setValue4(){
         redisUtils.opsForValue("age",18);
         int age = (int) redisUtils.getForValue("age");
         Set<Object> name = redisUtils.opsForSet("name");

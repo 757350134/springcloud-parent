@@ -40,6 +40,14 @@ public class EurekaController {
         return "success";
     }
 
+    @GetMapping("/setValue2")
+    public  String setValue2(){
+        redisUtils.opsForValue("age",18);
+        int age = (int) redisUtils.getForValue("age");
+        Set<Object> name = redisUtils.opsForSet("name");
+        System.out.println(age);
+        return "success";
+    }
     @GetMapping("/getList")
     public  String getList(){
         List<String> list=new ArrayList<String>();

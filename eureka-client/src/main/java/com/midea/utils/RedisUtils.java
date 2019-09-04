@@ -12,14 +12,14 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
-//@Component
+/*@Component*/
 @Slf4j
 public class RedisUtils {
 
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @Value("${spring.cluster.cache.prefix}")
+    @Value("${spring.cluster.cache.prefix:ccs}")
     protected String prefix ;
 
     private String getKeyPrefix (String key) {
@@ -384,5 +384,16 @@ public class RedisUtils {
         if (time > 0) {
             expire(key, time);
         }
+    }
+
+    public void zadd(String key,Object o,int  score){
+        //redisTemplate.boundZSetOps(key).
+        redisTemplate.opsForZSet().add(getKeyPrefix(key),o,score);
+    }
+
+    public Set zrange(String key,long stat ,long  end){
+        //redisTemplate.boundZSetOps(key).
+        Set range = redisTemplate.opsForZSet().range(getKeyPrefix(key), stat, end);
+        return range;
     }
 }

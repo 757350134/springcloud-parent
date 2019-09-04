@@ -1,6 +1,7 @@
 package com.midea;
 
 
+import com.midea.utils.RedisUtils;
 import com.netflix.discovery.shared.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = Application.class)
 public class MqDemo {
 
-      @Autowired
+     /* @Autowired
     private AmqpTemplate amqpTemplate;
 
     @Test
@@ -22,5 +23,19 @@ public class MqDemo {
         this.amqpTemplate.convertAndSend("spring.test.exchange","a.b", msg);
         // 等待10秒后再结束
         Thread.sleep(10000);
-    }
+    }*/
+
+    @Autowired
+    private com.midea.config.CacheConfig CacheConfig;
+
+     @Autowired
+    private RedisUtils redisUtils;
+
+     @Test
+     public void testPut(){
+
+         String value="message";
+
+         redisUtils.opsForValue("m1",value);
+     }
 }

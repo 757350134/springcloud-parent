@@ -3,6 +3,7 @@ package com.midea.controller;
 import com.midea.model.User;
 import com.midea.service.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,5 +34,11 @@ public class UserController {
         model.addAttribute("users", users);
         // 返回模板名称（就是classpath:/templates/目录下的html文件名）
         return "users";
+    }
+
+    @ApiOperation(value = "登录", notes = "登录")
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 }

@@ -1,0 +1,70 @@
+spring:
+  profiles:
+    active: redis
+  application:
+    name: spring-center
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT1FROMDUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  cluster:
+    redis:
+       host: 127.0.0.1
+       port: 6379
+       masterName: cluster6379
+       maxTotal: 200
+       maxIdle: 50
+       numTestsPerEvictionRun: 1024
+       maxWaitMillis: 1500
+       blockWhenExhausted: false
+       type: singleton
+       expire: 10
+    cache:
+       prefix: bgy
+  rabbitmq:
+      host: 192.168.65.128
+      username: guest
+      password: guest
+      virtual-host: /
+server:
+  port: 8888
+eureka:
+ client:
+   service-url:
+     defaultZone : http://localhost:8088/eureka
+logging:
+  level:
+    com.midea : debug
+
+mybatis-plus:
+  global-config:
+    db-column-underline: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  mapper-locations: classpath*:mappers/*.xml
+
+#mybatis:
+  #实体类所做包
+#  type-aliases-package: com.midea.model
+  #mapper.xml所在位置
+ # mapper-locations: classpath:mappers/*.xml
+
+swagger:
+    enabled: true

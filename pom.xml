@@ -9,6 +9,7 @@
         <module>eureka-client</module>
         <module>service-ribbon</module>
         <module>service-feign</module>
+        <module>spring-init</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

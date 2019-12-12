@@ -80,6 +80,7 @@ public class ShiroServiceImpl implements ShiroService {
 
         filterChainDefinitionMap.put("/api2/**","anon");
 
+        filterChainDefinitionMap.put("/*","anon");
         //加载数据库中配置的资源权限列表
         List<SysResource> resourcesList = sysResourceService.listUrlAndPermission();
         int a = 0;

@@ -36,6 +36,7 @@ public class SpringInitApplication {
     @RequestMapping("/test")
     public Result  test(){
         System.out.println("test ms12");
+        System.out.println("test ms12  12");
         return ResultUtil.success("test");
     }
 

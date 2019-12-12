@@ -34,6 +34,7 @@ public class SpringInitApplication {
 
     @RequestMapping("/test")
     public Result  test(){
+        System.out.println("ms");
         return ResultUtil.success("test");
     }
 
@@ -41,6 +42,7 @@ public class SpringInitApplication {
     public Result  getError(){
         return ResultUtil.error(MessageCode.SERVER_EXCEPTION);
     }
+
 
 
 }

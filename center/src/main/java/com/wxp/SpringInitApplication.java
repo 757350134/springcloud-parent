@@ -41,4 +41,9 @@ public class SpringInitApplication {
     public Result  getError(){
         return ResultUtil.error(MessageCode.SERVER_EXCEPTION);
     }
+
+    @RequestMapping("/master")
+    public Result  master(){
+        return ResultUtil.success("master");
+    }
 }

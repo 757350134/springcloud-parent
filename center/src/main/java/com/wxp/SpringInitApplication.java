@@ -27,6 +27,7 @@ public class SpringInitApplication {
 
     @RequestMapping("/getMessage")
     public Result  getMessage(){
+        System.out.println("ms12");
         return ResultUtil.success("ok");
     }
 

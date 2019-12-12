@@ -31,6 +31,12 @@ public class SpringInitApplication {
     }
 
 
+
+    @RequestMapping("/test")
+    public Result  test(){
+        return ResultUtil.success("test");
+    }
+
     @RequestMapping("/getError")
     public Result  getError(){
         return ResultUtil.error(MessageCode.SERVER_EXCEPTION);

@@ -37,6 +37,7 @@ public class SpringInitApplication {
     @RequestMapping("/test")
     public Result  test(){
         log.debug("master");
+        log.debug("master1212");
         return ResultUtil.success("test");
     }
 

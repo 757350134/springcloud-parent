@@ -3,6 +3,7 @@ package com.wxp;
 import com.wxp.base.MessageCode;
 import com.wxp.base.Result;
 import com.wxp.base.ResultUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication(exclude= DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
 @RestController
+@Slf4j
 public class SpringInitApplication {
     public static void main(String[] args) {
        // System.out.println(111);
@@ -34,6 +36,7 @@ public class SpringInitApplication {
 
     @RequestMapping("/test")
     public Result  test(){
+        log.debug("master");
         return ResultUtil.success("test");
     }
 

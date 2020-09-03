@@ -11,4 +11,6 @@ public class User {
     private Long age;
 
     private String email;
+
+    private String addr;
 }

@@ -15,7 +15,7 @@ import java.util.UUID;
  * @Modified By：
  */
 
-@Configuration
+//@Configuration
 @Slf4j
 public class MqttConfig {
 

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class MqController {
 
-    @Autowired
+
     private MqttClient client;
 
     @GetMapping("/send")

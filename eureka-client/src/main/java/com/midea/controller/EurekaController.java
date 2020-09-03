@@ -23,6 +23,8 @@ public class EurekaController {
     @Autowired
     private RedisUtils redisUtils;
 
+    private static final String key="bgy:iot:test:";
+
 
     @GetMapping("/getMessage")
     @ApiOperation("测试接口")
@@ -40,8 +42,8 @@ public class EurekaController {
 
     @GetMapping("/setValue")
     public  String setValue(){
-        redisUtils.opsForValue("age",18);
-        int age = (int) redisUtils.getForValue("age");
+        redisUtils.opsForValue(key+"age",18);
+        int age = (int) redisUtils.getForValue(key+"age");
         Set<Object> name = redisUtils.opsForSet("name");
         System.out.println(age);
         return "success";

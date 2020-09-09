@@ -24,11 +24,13 @@ public class EurekaController {
     private RedisUtils redisUtils;
 
 
+/*
     @GetMapping("/getMessage")
     @ApiOperation("测试接口")
     public String getMessgae(){
         return "ok";
     }
+*/
 
 
     @GetMapping("/setValue")

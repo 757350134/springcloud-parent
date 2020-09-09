@@ -23,7 +23,7 @@ public class EurekaClientApp {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping("/hi")
+/*    @RequestMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "wxp") String name) {
         return "hi " + name + " ,i am from port:" + port;
     }
@@ -31,5 +31,5 @@ public class EurekaClientApp {
     @RequestMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "wxp") String name) {
         return "hello  " + name + " ,i am from port:" + port;
-    }
+    }*/
 }

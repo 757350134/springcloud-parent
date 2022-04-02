@@ -15,4 +15,10 @@ public class RibbonController {
     public String hello(String name){
       return ribbonService.helloService(name);
     }
+
+
+    @RequestMapping("/hello1")
+    public String hello1(String name){
+        return ribbonService.helloService(name);
+    }
 }

@@ -17,12 +17,6 @@ public class RibbonController {
     }
 
 
-    @RequestMapping("/hello1")
-    public String hello1(String name){
-        return ribbonService.helloService(name);
-    }
-
-
     @RequestMapping("/hello2")
     public String hello2(String name){
         return ribbonService.helloService(name);
